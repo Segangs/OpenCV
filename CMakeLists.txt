@@ -6,5 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(OpenCV REQUIRED)
 
-add_executable(01_helloWorld part1/01_HelloWorld.cpp)
-target_link_libraries(01_helloWorld PRIVATE ${OpenCV_LIBS})
+set(TARGET_NAME 
+    22_mask )
+set(SOURCE_DIR part2)
+set(SOURCES ${SOURCE_DIR}/${TARGET_NAME}.cpp)
+
+add_executable(${TARGET_NAME} ${SOURCES})
+target_link_libraries(${TARGET_NAME} PRIVATE ${OpenCV_LIBS})
